@@ -28,7 +28,7 @@ public final class LibraryServiceTest {
      */
     public static void main(String[] args) throws Exception {
         check("TC01", "Empty library", "size=0", () -> {
-            withService(s -> assertEquals(0, s.size()));
+            withService(s -> { assertEquals(0, s.size()); return null; });
             return "size=0";
         });
         check("TC02", "Valid book added", "ID=BK-101; status=Available", () ->

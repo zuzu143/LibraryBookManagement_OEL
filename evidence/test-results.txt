@@ -1,0 +1,32 @@
+TC01 | Empty library                  | Expected: size=0                    | Actual: size=0                    | PASS
+TC02 | Valid book added               | Expected: ID=BK-101; status=Available | Actual: ID=BK-101; status=Available | PASS
+TC03 | Trim input                     | Expected: title=Clean Code          | Actual: title=Clean Code          | PASS
+TC04 | Duplicate ID                   | Expected: rejected duplicate        | Actual: rejected duplicate        | PASS
+TC05 | Duplicate ID case insensitive  | Expected: rejected bk-101           | Actual: rejected bk-101           | PASS
+TC06 | Empty title                    | Expected: rejected empty title      | Actual: rejected empty title      | PASS
+TC07 | Whitespace-only title          | Expected: rejected whitespace title | Actual: rejected whitespace title | PASS
+TC08 | Empty author                   | Expected: rejected empty author     | Actual: rejected empty author     | PASS
+TC09 | Missing ID                     | Expected: rejected invalid ID       | Actual: rejected invalid ID       | PASS
+TC10 | Invalid ID characters          | Expected: rejected bad ID           | Actual: rejected bad ID           | PASS
+TC11 | View all books                 | Expected: 2 books listed            | Actual: 2 books listed            | PASS
+TC12 | Search by author               | Expected: 1 author match            | Actual: 1 author match            | PASS
+TC13 | Search by status               | Expected: 2 available matches       | Actual: 2 available matches       | PASS
+TC14 | Search no match                | Expected: 0 results                 | Actual: 0 results                 | PASS
+TC15 | Update existing details        | Expected: title=Refactoring         | Actual: title=Refactoring         | PASS
+TC16 | Change book ID                 | Expected: old=null; new=BK-105      | Actual: old=null; new=BK-105      | PASS
+TC17 | Update missing book            | Expected: rejected unknown ID       | Actual: rejected unknown ID       | PASS
+TC18 | Update to duplicate ID         | Expected: rejected ID collision     | Actual: rejected ID collision     | PASS
+TC19 | Set Issued                     | Expected: status=Issued             | Actual: status=Issued             | PASS
+TC20 | Set Reserved                   | Expected: status=Reserved           | Actual: status=Reserved           | PASS
+TC21 | Return to Available            | Expected: status=Available          | Actual: status=Available          | PASS
+TC22 | Null status                    | Expected: rejected null status      | Actual: rejected null status      | PASS
+TC23 | Delete existing book           | Expected: remaining=1               | Actual: remaining=1               | PASS
+TC24 | Delete missing book            | Expected: rejected unknown ID       | Actual: rejected unknown ID       | PASS
+TC25 | Persistence after restart      | Expected: reloaded=2                | Actual: reloaded=2                | PASS
+TC26 | Status saved after restart     | Expected: reloaded=Reserved         | Actual: reloaded=Reserved         | PASS
+TC27 | Blank search                   | Expected: all 2 results             | Actual: all 2 results             | PASS
+TC28 | Title with newline             | Expected: rejected control character | Actual: rejected control character | PASS
+TC29 | Invalid add has no side effects | Expected: size remains 2            | Actual: size remains 2            | PASS
+TC30 | Counters by status             | Expected: 1 issued; 1 reserved      | Actual: 1 issued; 1 reserved      | PASS
+
+SUMMARY: 30 PASS, 0 FAIL, 30 TOTAL
