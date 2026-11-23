@@ -16,6 +16,7 @@ public final class BookTableModel extends AbstractTableModel {
     public BookTableModel() { }
 
     private static final String[] COLUMNS = {"BOOK ID", "TITLE", "AUTHOR", "STATUS"};
+    /** Current read-only row snapshot. */
     private List<Book> books = new ArrayList<>();
 
     /**

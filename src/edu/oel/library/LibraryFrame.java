@@ -49,20 +49,35 @@ public final class LibraryFrame extends JFrame {
     private static final Font BODY = new Font("Dialog", Font.PLAIN, 14);
     private static final Font STRONG = new Font("Dialog", Font.BOLD, 14);
 
+    /** Business operations and persisted book records. */
     private final LibraryService service;
+    /** Table model supplying book rows. */
     private final BookTableModel model = new BookTableModel();
+    /** Catalogue grid. */
     private final JTable table = new JTable(model);
+    /** Live search input. */
     private final JTextField searchField = new JTextField();
+    /** Book identifier input. */
     private final JTextField idField = new JTextField();
+    /** Title input. */
     private final JTextField titleField = new JTextField();
+    /** Author input. */
     private final JTextField authorField = new JTextField();
+    /** Circulation state selector. */
     private final JComboBox<BookStatus> statusBox = new JComboBox<>(BookStatus.values());
+    /** Count of all books. */
     private final JLabel totalCount = makeStatValue();
+    /** Count of available books. */
     private final JLabel availableCount = makeStatValue();
+    /** Count of issued books. */
     private final JLabel issuedCount = makeStatValue();
+    /** Count of reserved books. */
     private final JLabel reservedCount = makeStatValue();
+    /** Search result count indicator. */
     private final JLabel resultsLabel = new JLabel();
+    /** Bottom status message. */
     private final JLabel infoLabel = new JLabel("Ready. Select a row to edit or add a new book.");
+    /** Original ID for the currently selected row. */
     private String selectedOriginalId;
 
     /**
@@ -289,43 +304,43 @@ public final class LibraryFrame extends JFrame {
         note.setFont(new Font("Dialog", Font.PLAIN, 11));
         note.setAlignmentX(Component.LEFT_ALIGNMENT);
         editor.add(note);
-        editor.add(Box.createVerticalStrut(26));
+        editor.add(Box.createVerticalStrut(10));
         setupTextField(idField, "idField");
         setupTextField(titleField, "titleField");
         setupTextField(authorField, "authorField");
         editor.add(fieldGroup("BOOK ID *", idField));
-        editor.add(Box.createVerticalStrut(16));
+        editor.add(Box.createVerticalStrut(10));
         editor.add(fieldGroup("TITLE *", titleField));
-        editor.add(Box.createVerticalStrut(16));
+        editor.add(Box.createVerticalStrut(10));
         editor.add(fieldGroup("AUTHOR *", authorField));
-        editor.add(Box.createVerticalStrut(16));
+        editor.add(Box.createVerticalStrut(10));
         statusBox.setName("statusBox");
         statusBox.setFont(BODY);
         statusBox.setBackground(Color.WHITE);
         statusBox.setFocusable(false);
         statusBox.setMaximumSize(new Dimension(Integer.MAX_VALUE, 42));
         editor.add(fieldGroup("CIRCULATION STATUS", statusBox));
-        editor.add(Box.createVerticalStrut(24));
+        editor.add(Box.createVerticalStrut(10));
         JButton add = button("+  Add Book", TEAL, Color.WHITE);
         add.setName("addButton");
         add.addActionListener(e -> addBook());
         editor.add(add);
-        editor.add(Box.createVerticalStrut(9));
+        editor.add(Box.createVerticalStrut(5));
         JButton update = button("Update Selected", NAVY, Color.WHITE);
         update.setName("updateButton");
         update.addActionListener(e -> updateBook());
         editor.add(update);
-        editor.add(Box.createVerticalStrut(9));
+        editor.add(Box.createVerticalStrut(5));
         JButton status = button("Set Status", new Color(225, 240, 239), INK);
         status.setName("statusButton");
         status.addActionListener(e -> setStatus());
         editor.add(status);
-        editor.add(Box.createVerticalStrut(9));
+        editor.add(Box.createVerticalStrut(5));
         JButton delete = button("Delete Selected", new Color(255, 236, 236), new Color(160, 47, 55));
         delete.setName("deleteButton");
         delete.addActionListener(e -> deleteBook());
         editor.add(delete);
-        editor.add(Box.createVerticalStrut(9));
+        editor.add(Box.createVerticalStrut(5));
         JButton clear = button("Clear Form", new Color(238, 242, 247), INK);
         clear.setName("clearButton");
         clear.addActionListener(e -> clearForm());
