@@ -1,0 +1,22 @@
+Local Git history was built through real commits in this project.
+
+Commands used and demonstrable in the project directory:
+  git init -b main
+  git add .
+  git commit -m "..."
+  git status
+  git log --oneline --graph --all
+  git diff 79b0aa4 18ecaee --stat
+  git diff 79b0aa4 18ecaee -- src/edu/oel/library/LibraryFrame.java
+
+Recorded files:
+  git-status.txt                status snapshot before packaging
+  git-log.txt                   actual abbreviated commit history
+  git-diff-feature-stat.txt     changes introduced by Swing UI commit
+  git-diff-working-tree.txt    empty when no unstaged source modifications exist
+
+To publish this project, the student must supply an owned GitHub repository and authenticate:
+  git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+  git push -u origin main
+
+NO REMOTE GITHUB PUSH HAS BEEN COMPLETED FOR THE STUDENT.

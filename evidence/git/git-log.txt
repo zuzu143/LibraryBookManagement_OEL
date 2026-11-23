@@ -1,0 +1,7 @@
+f5607ad  2026-11-23  evidence: capture actual Swing sessions and Javadoc browser screen
+3870259  2026-11-23  docs: generate HTML Javadoc and refine documented public API
+b0663e5  2026-11-23  fix: correct test harness return type and record passing regression results
+b037c71  2026-11-23  test: add 30 isolated automated CRUD, validation and persistence cases
+18ecaee  2026-11-23  feat: add Swing dashboard, searchable table, editor and status controls
+79b0aa4  2026-11-23  feat: implement validated book model, CRUD service, atomic file persistence
+fd75ec8  2026-11-23  chore: establish project structure, JDK scripts and submission checklist

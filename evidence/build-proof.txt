@@ -1,0 +1,13 @@
+Build and execution environment (artifact preparation, 23 November 2026)
+JDK: OpenJDK 21.0.12.1, Java language/library compatible with JDK 17+
+Command: bash scripts/test.sh
+Result: 30 PASS / 0 FAIL / 30 TOTAL (see test-results.txt)
+Command: bash scripts/docs.sh
+Result: generated docs/javadoc/index.html, Javadoc exited 0 without warnings
+Command: javac -encoding UTF-8 -cp out -d out tools/ScreenshotCapture.java
+Command: xvfb-run -a -s '-screen 0 1600x900x24' java -cp out ScreenshotCapture
+Result: eight genuine Java Swing screen captures, including validation dialogs
+IDE-specific run/debug: NOT independently verified; perform in your own IDE.
+Javadoc manual browser review: STUDENT SHOULD OPEN docs/javadoc/index.html.
+GitHub remote push: NOT DONE, requires repository and authentication.
+GCR upload and physical viva: NOT DONE, requires student action.
