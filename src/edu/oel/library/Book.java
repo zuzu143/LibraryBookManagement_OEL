@@ -28,16 +28,32 @@ public final class Book {
         this.status = Objects.requireNonNull(status, "status");
     }
 
-    /** @return the book identifier */
+    /**
+     * Gets the unique identity of this book.
+     *
+     * @return the book identifier
+     */
     public String getId() { return id; }
 
-    /** @return the title */
+    /**
+     * Gets the book title.
+     *
+     * @return the title
+     */
     public String getTitle() { return title; }
 
-    /** @return the author's name */
+    /**
+     * Gets the author of this book.
+     *
+     * @return the author's name
+     */
     public String getAuthor() { return author; }
 
-    /** @return the current circulation status */
+    /**
+     * Gets the current circulation state.
+     *
+     * @return the current circulation status
+     */
     public BookStatus getStatus() { return status; }
 
     /**

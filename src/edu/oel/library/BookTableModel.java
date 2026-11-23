@@ -10,6 +10,11 @@ import javax.swing.table.AbstractTableModel;
  * @author OEL Student Team
  */
 public final class BookTableModel extends AbstractTableModel {
+    /**
+     * Constructs an empty book table model.
+     */
+    public BookTableModel() { }
+
     private static final String[] COLUMNS = {"BOOK ID", "TITLE", "AUTHOR", "STATUS"};
     private List<Book> books = new ArrayList<>();
 
