@@ -1,0 +1,9 @@
+/out/
+/build/
+*.class
+*.log
+*.bak
+/data/*.properties
+/.idea/
+*.iml
+/.settings/
